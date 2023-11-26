@@ -1,9 +1,9 @@
 # Empowerkids Complaint Portal
 
 ## About the Project
-I created the Empowerkids Complaint Portal to empower children and give them a voice. As advocates for children's rights and wellbeing, I disheartened to see many instances where children's concerns went unheard or were dismissed due to their young age and lack of resources. So, I envisioned a platform that would provide them an avenue to speak up.
+I created the Empowerkids Complaint Portal to empower children and give them a voice. As an advocate for children's rights and well-being, I was disheartened to see many instances where children's concerns went unheard or were dismissed due to their young age and lack of resources. So, I envisioned a platform that would allow them to speak up.
 
-The portal provides a safe, supportive and non-judgmental space for children to voice their grievances. Whether it is an issue at school, home or in their community, children can file complaints through the portal to bring it to light. Filing the complaint itself can be an act of catharsis and comfort for the child.
+The portal provides a safe, supportive and non-judgmental space for children to voice their grievances. Children can file complaints through the portal to bring it to light whether it is an issue at school, at home or in their community. Filing the complaint itself can be an act of catharsis and comfort for the child.
 
 ## How It Will Help Children:
 
@@ -13,27 +13,25 @@ The portal provides a safe, supportive and non-judgmental space for children to 
 - Raises awareness on issues disproportionately affecting kids
 - Drives better policies and social change to protect children
 - Helps those facing unjust situations and unable to speak up
-- Supports vulnerable children so they don't feel alone
-- Empowers children by amplifying their voices for good
 
 # Technical Details
 
 ## Front-end
-The front-end of this platform is built using **React.js** in conjunction with **Material UI** to ensure a modern and intuitive user interface.
+The front end of this platform is built using **React.js** in conjunction with **Material UI** to ensure a modern and intuitive user interface.
 
 ## Back-end
 I have leveraged **Firebase** to create a robust back-end infrastructure. Google **Firestore** serves as the database, offering a flexible foundation for future expansions and easy addition of new agents or functionalities.
 
 ## Hosting
-The platform is hosted on **Netlify**, a powerful cloud platform that facilitates seamless deployment, instant scaling, and hassle-free hosting without the need for constant supervision.
+The platform is hosted on **Netlify**, a powerful cloud platform that facilitates seamless deployment, instant scaling, and hassle-free hosting without constant supervision.
 
 # User Flow
 
 - Kids/Parents can file new complaints providing type and description
-- Kids/Parents can view status of their complaints in personal dashboard
-- Complaints get assigned to EmpowerKids team first
-- They will verify the Authenticity of the case,then escalated to Legal Expert
-- The legal expert will reach to user and try to solve the case and provide insights on the case
+- Kids/Parents can view the status of their complaints in the personal dashboard
+- Complaints get assigned to the EmpowerKids team first
+- They will verify the Authenticity of the case, then escalate to Legal Expert
+- The legal expert will reach out to the user and try to solve the case and provide insights into the case
 - If unresolved or need more help, it will be escalated to Government Official
 - Officers can update status and remarks for complaints
 - Visitors can view anonymized complaints and status
@@ -42,7 +40,7 @@ The platform is hosted on **Netlify**, a powerful cloud platform that facilitate
 
 ### Home Page
 * It is the home page of our website with basic information.
-* It features Notification / Circulars section with latest updates from Officers.
+* It features a Notification / Circulars section with the latest updates from Officers.
 
 ### Special Features
 * All Data is live fetched and updated improving user experience.
@@ -90,24 +88,29 @@ The platform is hosted on **Netlify**, a powerful cloud platform that facilitate
 
 ## Login Credentials
 #### Admin Account:
-Username : empowerkids@gmail.com
-Password : 12345678
+Username: empowerkids@gmail.com
+
+Password: 12345678
 
 #### Kid Account :
-Username : kid@gmail.com
-Password : 12345678
+Username: kid@gmail.com
+
+Password: 12345678
 
 #### EmpowerKids Team Account:
-Username : empowerkidsteam@gmail.com
-Password : 12345678
+Username: empowerkidsteam@gmail.com
+
+Password: 12345678
 
 #### Legal Expert Account:
-Username : Legalexpert@gmail.com
-Password : 12345678
+Username: Legalexpert@gmail.com
+
+Password: 12345678
 
 #### Government Official Account:
-Username : governmentofficial@gmail.com
-Password : 12345678
+Username: governmentofficial@gmail.com
+
+Password: 12345678
 
 
 ### Future Works/Planned Updates
@@ -148,16 +151,16 @@ Start the server
 ## FAQ
 
 #### Who can file complaints through the portal?
-Any child facing issues like at school, home or community that affect them.
+Any child facing issues at school, home or community that affect them.
 
 #### What happens when a complaint is filed?
-It gets manually reviewed by child rights experts who then guide, stand up and escalate the complaint on child's behalf.
+It gets manually reviewed by child rights experts who then guide, stand up and escalate the complaint on the child's behalf.
 
 #### Does filing a complaint actually help resolve the issue?
 Yes, the aim of the platform is to ultimately get each complaint resolved through appropriate guidance and escalation.
 
 #### Are there any data privacy or security concerns?
-Anonymity of children is maintained and the website is securely hosted on trusted platforms like Firebase and Netlify.
+The anonymity of children is maintained and the website is securely hosted on trusted platforms like Firebase and Netlify.
 
 ## Screenshots
 
