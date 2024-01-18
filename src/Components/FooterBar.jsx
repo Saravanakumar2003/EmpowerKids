@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react"
 import Box from '@mui/material/Box';
 import { Typography, Container } from '@mui/material';
@@ -20,15 +21,14 @@ const Footer = () => {
                         <a href="" target="_blank" rel="noreferrer" >
                         </a>
                         <Box>
-                        {/* Link to the EmpowerKids Complaint Register Portal */} 
                         <Typography  sx={{ cursor: "pointer", display:"inline-block", marginX:1 }} onClick={() => window.open("", '_blank')}> 
-                        EmpowerKids Complaint Register Portal
+                        NIWE Dashboard
                         </Typography>
 
                         </Box>
                         {/* Copyright notice */}
                         <Typography sx={{ textAlign: "center" }}>
-                            EmpowerKids<br />2023 &#169; All Rights Reserved
+                            Build by Saravanakumar R<br />2023 &#169; All Rights Reserved
                         </Typography> 
                     </Box>
                 </Container> {/* End of Container */}

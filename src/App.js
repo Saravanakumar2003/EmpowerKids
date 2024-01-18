@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import { auth } from "./Firebase/firebaseConfig"
 import { onAuthStateChanged } from "firebase/auth";
-import { getDocs, collection, doc, updateDoc } from "firebase/firestore";
-import { db } from "./Firebase/firebaseConfig"
 
 // toast message
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,10 +18,12 @@ import Home from "./Pages/Home/Home"
 import Login from "./Pages/Login/Login"
 import Signup from "./Pages/Signup/Signup"
 import Profile from "./Pages/Profile/Profile"
-import StudentDashboard from "./Pages/StudentDashboard/StudentDashboard"
-import OfficerDashboard from "./Pages/OfficerDashboard/OfficerDashboard"
-import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard"
+import Dashboard from "./Pages/Dashboard/Dashboard"
+import AddProject from "./Pages/AddProject/AddProject"
 import ContactUs from "./Pages/ContactUs/ContactUs"
+import AddEmployee from "./Pages/Employee/AddEmployee";
+import MarkAttendance from "./Pages/Attendance/MarkAttendance";
+import AttendanceDashboard from "./Pages/Attendance/AttendanceDashboard";
 
 
 const App = () => {
@@ -52,44 +52,6 @@ const App = () => {
     }
   });
 
-  const [allComplaints, setAllComplaints] = React.useState([])
-
-  React.useEffect(() => { // update complaint status
-    if (allComplaints.length > 0) { // if allComplaints is not empty
-      allComplaints.forEach(async (comp) => { // for each complaint
-        if (new Date() - new Date(comp.issuedDate) > 604800000) { // if complaint is older than 7 days
-          const compRef = doc(db, "empowerkids_complaint", comp.key); // get reference to complaint
-          if (comp.issuedTo === "Empowerkids Team") { // if complaint is issued to Empowerkids Team
-            await updateDoc(compRef, { // update complaint status
-              issuedTo: "Legal Expert" // change issuedTo to Legal Expert
-            });
-          }
-          if (comp.issuedTo === "Legal Expert") { // if complaint is issued to Legal Expert
-            await updateDoc(compRef, { // update complaint status
-              issuedTo: "Government Official" // change issuedTo to Government Official
-            });
-          }
-        }
-      })
-    }
-  }, [allComplaints])
-
-  React.useEffect(() => { // get all complaints
-
-    const getData = async () => { 
-      const querySnapshot = await getDocs(collection(db, "empowerkids_complaint")); 
-
-      const tempComp = [] // temporary array to store all complaints
-      querySnapshot.forEach((doc) => { // for each complaint
-        const data = { ...doc.data(), key: doc.id, issuedDate: doc.data().issuedDate.toDate() } // get data and add key and issuedDate
-        tempComp.push(data) // add to temporary array
-      });
-      setAllComplaints(tempComp) // set allComplaints
-    }
-
-    getData() // call getData function
-
-  }, [])
 
   return (
     <>
@@ -110,10 +72,12 @@ const App = () => {
             <Route path="/login" element={<Login currUser={currUser} notify={notify} />} />
             <Route path="/signup" element={<Signup currUser={currUser} notify={notify} />} />
             <Route path="/profile" element={<Profile currUser={currUser} notify={notify} />} />
-            <Route path="/studentDashboard" element={<StudentDashboard currUser={currUser} notify={notify} />} />
-            <Route path="/officerDashboard" element={<OfficerDashboard currUser={currUser} notify={notify} />} />
-            <Route path="/adminDashboard" element={<AdminDashboard currUser={currUser} notify={notify} />} />
-          </Routes>
+            <Route path="/dashboard" element={<Dashboard currUser={currUser} notify={notify} />} />
+            <Route path="/addProject" element={<AddProject currUser={currUser} notify={notify} />} />
+            <Route path="/addemployee" element={<AddEmployee currUser={currUser} notify={notify} />} />
+            <Route path="/myattendance" element={<MarkAttendance currUser={currUser} notify={notify} />} />
+            <Route path="/attendancedashboard" element={<AttendanceDashboard currUser={currUser} notify={notify} />} />
+            </Routes>
 
         </Container>
         <FooterBar />

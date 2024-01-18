@@ -20,12 +20,10 @@ export default function MediaControlCard({ currUser, myinfo }) {
                         {`${myinfo && myinfo.email} | +91-${myinfo && myinfo.phoneNo}`}
                     </Typography>
                     {
-                        myinfo && myinfo.accountType === "Student" ?
+                        myinfo && myinfo.accountType === "Employee" ?
                             <>
                                 <Typography variant="subtitle2" sx={{ display: "inline" }}>State: </Typography> 
                                 <Typography variant="body2" sx={{ display: "inline" }}>{myinfo && myinfo.stateName}<br /></Typography>
-                                <Typography variant="subtitle2" sx={{ display: "inline" }}>Age: </Typography>
-                                <Typography variant="body2" sx={{ display: "inline" }}>{myinfo && myinfo.age}<br /></Typography>
                             </> :
                             <>
                                 <Typography variant="subtitle2" sx={{ display: "inline" }}>Account Type: </Typography>

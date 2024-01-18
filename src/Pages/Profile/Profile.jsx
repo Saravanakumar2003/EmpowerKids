@@ -34,7 +34,6 @@ const Profile = ({ currUser, notify }) => {
         stateName: "",
         name: "",
         phoneNo: "",
-        age: "",
         uid: "",
     })
 
@@ -48,7 +47,7 @@ const Profile = ({ currUser, notify }) => {
             return
         }
 
-        const q = query(collection(db, "empowerkids_users"), where("uid", "==", currUser.uid));
+        const q = query(collection(db, "niwe_users"), where("uid", "==", currUser.uid));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             let mytempinfo
             querySnapshot.forEach((doc) => {
@@ -65,13 +64,12 @@ const Profile = ({ currUser, notify }) => {
 
     const updateProfileFunction = async () => {
         try {
-            const userRef = doc(db, "empowerkids_users", userData.key);
+            const userRef = doc(db, "niwe_users", userData.key);
 
             await updateDoc(userRef, {
                 name: userData.name,
                 phoneNo: userData.phoneNo,
                 stateName: userData.stateName,
-                age: userData.age,
             });
 
             notify("Profile Updated !", "success")
@@ -96,8 +94,8 @@ const Profile = ({ currUser, notify }) => {
         setError("")
         if (!userData.name ||
             !userData.phoneNo ||
-            !userData.stateName ||
-            !userData.age) {
+            !userData.stateName)
+            {
             setError("Please provide value in each field.");
             return;
         }
@@ -141,18 +139,6 @@ const Profile = ({ currUser, notify }) => {
                                         label="Uer UID"
                                         type="text"
                                         id="uid"
-                                        disabled
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextField
-                                        required
-                                        fullWidth
-                                        name=""
-                                        value={userData.accountType}
-                                        label="Account Type"
-                                        type="text"
-                                        id="accounttype"
                                         disabled
                                     />
                                 </Grid>
@@ -237,16 +223,6 @@ const Profile = ({ currUser, notify }) => {
                                             </Select>
                                         </FormControl>
                                     </Grid>
-                                    <Grid item xs={12}>
-                                        <TextField
-                                            fullWidth
-                                            name="age"
-                                            value={userData.age}
-                                            label="Age"
-                                            type="text"
-                                            id="age"
-                                        />
-                                    </Grid>
                                 {error ?
                                     <>
                                         <Grid item xs={12}>
@@ -273,4 +249,4 @@ const Profile = ({ currUser, notify }) => {
     )
 }
 
-export default Profile
+export default Profile 
